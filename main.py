@@ -244,7 +244,8 @@ async def startup():
 async def shutdown():
     global tg_app
     if tg_app:
-        await tg_app.bot.delete_webhook()
+        # Do not delete the Telegram webhook during Render restarts/deploys.
+        # The webhook should remain registered while the service restarts.
         await tg_app.stop()
         await tg_app.shutdown()
         tg_app = None
