@@ -23,7 +23,7 @@ CHANNEL_ID = int(os.environ["CHANNEL_ID"])
 DISCUSSION_GROUP_ID = int(os.environ["DISCUSSION_GROUP_ID"])
 WEBHOOK_URL = os.environ["WEBHOOK_URL"].rstrip("/")
 WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET", "")
-DB_PATH = os.getenv("DB_PATH", "/var/data/jury.sqlite3")
+DB_PATH = os.getenv("DB_PATH", "/tmp/jury.sqlite3")
 WEBHOOK_PATH = "/telegram/webhook"
 
 # Threshold is based on the channel member count at the time each post appears.
