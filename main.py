@@ -1,6 +1,7 @@
 import logging
 import os
 import sqlite3
+from pathlib import Path
 from contextlib import closing
 from typing import Optional
 
@@ -155,7 +156,6 @@ async def on_discussion_message(update: Update, context: ContextTypes.DEFAULT_TY
         options=["👎 ဖျက်သင့်တယ်"],
         is_anonymous=False,
         allows_multiple_answers=False,
-        allows_revoting=False,
         reply_to_message_id=msg.message_id,
     )
     poll = poll_message.poll
